@@ -229,6 +229,8 @@ Ensure that you have completed the previous steps and created the appropriate ta
 s1
 s2
 ```
+<img src="screenshots/git push tags.png" alt ="I have ultised tags as sked">
+
 
 ### 2.6. Relate the classes
 
