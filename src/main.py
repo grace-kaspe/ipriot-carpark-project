@@ -9,5 +9,5 @@ entry_sensor = EntrySensor('111', car_park, is_active=True)
 exit_sensor = ExitSensor('222', car_park, is_active=True)
 car_park.register(Display('abc'))
 entry_sensor.detect_vehicle()
-entry_sensor.detect_vehicle()
+exit_sensor.detect_vehicle()
 
