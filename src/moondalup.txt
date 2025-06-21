@@ -1,0 +1,12 @@
+FAKE- 483 entered at 2025-06-22 00:59:45
+FAKE- 975 entered at 2025-06-22 00:59:45
+FAKE- 571 entered at 2025-06-22 00:59:45
+FAKE- 141 entered at 2025-06-22 00:59:45
+FAKE- 366 entered at 2025-06-22 00:59:45
+FAKE- 348 entered at 2025-06-22 00:59:45
+FAKE- 406 entered at 2025-06-22 00:59:45
+FAKE- 01 entered at 2025-06-22 00:59:45
+FAKE- 695 entered at 2025-06-22 00:59:45
+FAKE- 551 entered at 2025-06-22 00:59:45
+FAKE- 975 exited at 2025-06-22 00:59:45
+FAKE- 01 exited at 2025-06-22 00:59:45
