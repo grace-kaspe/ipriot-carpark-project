@@ -750,7 +750,9 @@ if __name__ == "__main__":
    > I encountered type error,  anything raise must be an instance pf c;ass tat inherits from BaseException like ValueError,TypeError, RuntimeError. <br>
    > This is fixed by wrapping the string in ValueError -> <br>
    >  ```raise ValueError(f" This plate - {plate} has never entered the car park :/ SYSTEM ERROR")```
-
+   
+   > ![After fixing CarPark class](screenshots/4-test-car-park-pass.png)
+Evidence after I fixed the car park class
 
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
 3. Push the tag to the remote repository:
@@ -805,10 +807,14 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 **Additional evidencing:**
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
+   > ![Error in the setup](screenshots/5-error-display-test.png) <br>
+   > This error occurs because in the setup id is a number, while in the test, id is expected as string. To fix, I changed the id in the setup as string 
+   
+   > ![Error in updating message](screenshots/6-error-in-update-display.png) <br>
+   > To fix, I added some codes to update the self.message in Display class under update method 
 
-   ```markdown
-   ![Unit tests](screenshots/unit-tests-display.png)
-   ```
+   >  ![After fixing the error](screenshots/7-display-test-OK.png) <br>
+   > After the fix, the test says OK for display
 
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.

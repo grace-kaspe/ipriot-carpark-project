@@ -14,3 +14,9 @@ class Display:
     def update(self, data):
         for key, value in data.items():
             print(f"{key}: {value}")
+
+            # This is to update self message and is_on to pass unit test
+            if "message" in data:
+                self.message = data["message"]
+            if "is_on" in data:
+                self.is_on = data["is_on"]
