@@ -1,21 +1,32 @@
 from display import Display
+from pathlib import Path
+from datetime import datetime # we'll use this to timestamp entries
 
 class CarPark:
     def __init__(self,
                  location,
                  capacity,
                  _plates = None,
-                 _displays = None):
+                 _displays = None,
+                 log_file=Path("log.txt")
+                 ):
         self.location = location
         self.capacity = capacity
+
+        self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
+        # create the file if it doesn't exist:
+        self.log_file.touch(exist_ok=True)
 
         # We must never set mutable defaults for parameters, thus it has to be none
         self.plates = _plates or []
         self.displays = _displays or []
 
-
     def __str__(self):
         return f"Car park at {self.location}, with {self.capacity}"
+
+    def _log_car_activity(self, plate, action):
+        with self.log_file.open("a") as f:
+            f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
 
     # register sensors and displays
     def register(self, component):
@@ -34,6 +45,7 @@ class CarPark:
         else:
             self.plates.append(plate)
             self.update_displays()
+            self._log_car_activity(plate, "entered")
 
     # when a car leaves the car park, we remove the number plate and update the displays
     def remove_car(self, plate):
@@ -41,6 +53,7 @@ class CarPark:
         if plate in self.plates :
             self.plates.remove(plate)
             self.update_displays()
+            self._log_car_activity(plate, "exited")
         else:
             raise ValueError(f" This plate - {plate} has never entered the car park :/ SYSTEM ERROR")
 
