@@ -30,8 +30,10 @@ class CarPark:
         with self.log_file.open("a") as f:
             f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
 
-    # register sensors and displays
     def register(self, component):
+        """
+            Register Display into the carpark
+        """
         # The isinstance function checks if an object is an instance of a class.
         if not isinstance(component, Display):
             raise TypeError("Object must be a Sensor or Display")
@@ -39,8 +41,10 @@ class CarPark:
         elif isinstance(component,Display):
             self.displays.append(component)
 
-    #when a car enters the car park, we record the number plate and update the displays
     def add_car(self, plate):
+        """
+           Wwhen a car enters the car park, we record the number plate and update the displays
+        """
         # if plate is already in plates list
         if plate in self.plates :
             raise f" This plate - {plate} is already in the car park"
@@ -49,8 +53,10 @@ class CarPark:
             self.update_displays()
             self._log_car_activity(plate, "entered")
 
-    # when a car leaves the car park, we remove the number plate and update the displays
     def remove_car(self, plate):
+        """
+            When a car leaves the car park, we remove the number plate and update the displays
+        """
         # if plate is not in the plates list
         if plate in self.plates :
             self.plates.remove(plate)
@@ -64,8 +70,10 @@ class CarPark:
     def available_bays(self):
         return max((self.capacity - len(self.plates)), 0)
 
-    # Update display methods
     def update_displays(self):
+        """
+           Update display methods
+        """
         # build dictionary containing data
         data = {"available_bays":  self.available_bays, "temperature": 27}
 
@@ -73,6 +81,9 @@ class CarPark:
         for display in self.displays:
             display.update(data)
 
+    """
+       Safe config file in json format
+    """
     def write_config(self):
         with open(self.config_file, "w") as f:
             json.dump({"location": self.location,
