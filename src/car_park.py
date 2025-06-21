@@ -3,6 +3,7 @@ from pathlib import Path
 from datetime import datetime # we'll use this to timestamp entries
 import json
 
+
 class CarPark:
     def __init__(self,
                  location,

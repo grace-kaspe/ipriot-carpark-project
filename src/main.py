@@ -2,7 +2,7 @@ from display import Display
 from car_park import CarPark
 from sensor import EntrySensor, ExitSensor
 from pathlib import Path
-import json
+
 
 # create a car park object with the location moondalup, capacity 100, and log_file "moondalup.txt"
 car_park =CarPark('Moondalup', 100, None, None)

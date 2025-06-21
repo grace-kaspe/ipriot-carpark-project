@@ -1,8 +1,7 @@
 from abc import ABC, abstractmethod
-
 from car_park import CarPark
-
 import random
+
 
 class Sensor(ABC):
     def __init__(self,
