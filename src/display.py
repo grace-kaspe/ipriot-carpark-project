@@ -10,8 +10,10 @@ class Display:
     def __str__(self):
         return f"Display {self.id}: {self.message}"
 
-    #  Accept data and print the data into any display
     def update(self, data):
+        """
+            Accept data and print the data into any display
+        """
         for key, value in data.items():
             print(f"{key}: {value}")
 
