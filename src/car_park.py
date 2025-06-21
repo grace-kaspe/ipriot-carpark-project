@@ -1,5 +1,4 @@
 from display import Display
-from sensor import  Sensor
 
 class CarPark:
     def __init__(self,
@@ -21,11 +20,9 @@ class CarPark:
     # register sensors and displays
     def register(self, component):
         # The isinstance function checks if an object is an instance of a class.
-        if not isinstance(component, (Sensor,Display)):
+        if not isinstance(component, Display):
             raise TypeError("Object must be a Sensor or Display")
 
-        if isinstance(component, Sensor):
-            self.displays.append(component)
         elif isinstance(component,Display):
             self.displays.append(component)
 
