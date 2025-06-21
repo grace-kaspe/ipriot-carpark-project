@@ -3,7 +3,7 @@ from car_park import CarPark
 
 class TestCarPark(unittest.TestCase):
       def setUp(self):
-         self.car_park = CarPark("123 Example Street", 100)
+         self.car_park = CarPark(location="123 Example Street",capacity=100)
 
       def test_car_park_initialized_with_all_attributes(self):
          self.assertIsInstance(self.car_park, CarPark)

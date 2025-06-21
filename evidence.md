@@ -479,26 +479,27 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](screenshots/methods-to-car-park.png)
-```
+<img src="/screenshots/s4-evidence.png" alt="added methods to the car park class ">
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - *The number of available bays*
->      `Answer here...`
+>      `CarPark, because the each car park has different capacity and the number of available bays is counted by reducing / increasing the capacity every time a car enters/leaves.`
 >    - *The current temperature*
->      `Answer here...`
+>      `CarPark, because temperature is meassured at the car park. Temperature is dependent on the location of the car park. Although the display is responsible to show the temperature, the temperature itself is measured at individual car park. `
 >    - *The time*
->      `Answer here...`
+>      `Sensor, because the seensor is the first point of touch with the car, when the car enters the car park or exists the car park. Therefore, the time is recorded by the sensor when the car enters/exits/`
 >
-> 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+> 2. **What is the difference between an attribute and a property?** <br>
+>    `Attribute is a piece of data that is attached to an object. Usually it holds a simple piece of information. An example of attribute in CarPark is location. To access, we use the dot notation directly.  such as print(CarPark.location)` </br>
+> ` A property is a special kind of attribute, it allows us to control how an attribute is read, written, or deleted by adding special logic, like validation or calculation. It removes the need of using getter and setter method just to access an atribute.`</br>
+> 
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `The data in dictionary is organised as it is structed by key value pairs. Passing multiple pieces of information, such as temperature and available bays are more efficient and cleaner using dictionary.`
+>     <br> `Dictionary is also mutable, which means updating the data is easy as the data is changed due t a car enters in or leaving, as well as temperature changing. `
 
 #### 2.7.5. Add a detect vehicle method to the Sensor class
 

@@ -39,10 +39,10 @@ class CarPark:
     def remove_car(self, plate):
         # if plate is not in the plates list
         if plate in self.plates :
-            self.plates.append(plate)
+            self.plates.remove(plate)
             self.update_displays()
         else:
-            raise f" This plate - {plate} has never entered the car park :/ SYSTEM ERROR"
+            raise ValueError(f" This plate - {plate} has never entered the car park :/ SYSTEM ERROR")
 
     # Calculating available bays
     @property
