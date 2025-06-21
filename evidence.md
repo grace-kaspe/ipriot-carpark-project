@@ -739,9 +739,18 @@ if __name__ == "__main__":
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
-   ```markdown
-   ![Unit tests](screenshots/unit-tests.png)
-   ```
+   >![Import error](screenshots/1-import-error.png) <br>
+   >`Import error is happening because in car park, I also imported sensor, which causes a circlular import, so after removing sensor from register method, it works` 
+   > 
+
+   > ![remove car error](screenshots/2-remove_car_error.png)<br>
+   > `Remove car is showing error, this is ebcause instead of removing licesne plate, I accidentally wrote append the plates list`.
+   
+   > ![Type error](screenshots/3-typeError.png)
+   > I encountered type error,  anything raise must be an instance pf c;ass tat inherits from BaseException like ValueError,TypeError, RuntimeError. <br>
+   > This is fixed by wrapping the string in ValueError -> <br>
+   >  ```raise ValueError(f" This plate - {plate} has never entered the car park :/ SYSTEM ERROR")```
+
 
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
 3. Push the tag to the remote repository:
